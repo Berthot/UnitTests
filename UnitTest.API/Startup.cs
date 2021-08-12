@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using UnitTest.Infra.Interface;
+using UnitTest.Domain.Interface;
 using UnitTest.Infra.Repositories;
 
 namespace UnitTest.API

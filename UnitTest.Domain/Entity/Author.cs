@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace UnitTest.Infra.Entity
+namespace UnitTest.Domain.Entity
 {
     public class Author
     {

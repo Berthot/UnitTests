@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using UnitTest.Infra.Entity;
+using UnitTest.Domain.Entity;
 
 namespace UnitTest.Infra
 {
@@ -28,7 +28,7 @@ namespace UnitTest.Infra
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Username=bertho;Password=idkfa123;Database=unitTest;");
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Username=postgres;Password=idkfa123;Database=testing;");
             base.OnConfiguring(optionsBuilder);
         }
     }

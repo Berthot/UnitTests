@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using UnitTest.Infra.Entity;
+using UnitTest.Domain.Entity;
 
-namespace UnitTest.Infra.Interface
+namespace UnitTest.Domain.Interface
 {
     public interface IRepository
     {

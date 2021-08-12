@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Polly;
-using UnitTest.Infra.Entity;
+using UnitTest.Domain.Entity;
 
 namespace UnitTestEF.Tests
 {

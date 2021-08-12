@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnitTest.Infra.Entity;
-using UnitTest.Infra.Interface;
+using UnitTest.Domain.Entity;
+using UnitTest.Domain.Interface;
 
 namespace UnitTest.Infra.Repositories
 {

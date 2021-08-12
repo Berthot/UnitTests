@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using UnitTest.Infra.Entity;
-using UnitTest.Infra.Interface;
+using UnitTest.Domain.Entity;
+using UnitTest.Domain.Interface;
 
 namespace UnitTestEF.Wrapper.Repositories
 {

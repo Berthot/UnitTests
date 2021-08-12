@@ -1,7 +1,6 @@
 ﻿using System;
+using UnitTest.Domain.Entity;
 using UnitTest.Infra;
-using UnitTest.Infra.Entity;
-using UnitTest.Infra.Interface;
 using UnitTest.Infra.Repositories;
 
 namespace UnitTestEF.Wrapper
