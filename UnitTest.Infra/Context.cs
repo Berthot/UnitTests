@@ -6,13 +6,15 @@ namespace UnitTest.Infra
 {
     public class Context : DbContext
     {
+  
+        public Context(DbContextOptions<Context> builderOptions) : base(builderOptions)
+        {
+        }
+        
         public Context()
         {
         }
 
-        public Context(DbContextOptions<Context> builderOptions) : base(builderOptions)
-        {
-        }
 
         public virtual DbSet<Book> Books { get; set; }
 
@@ -30,11 +32,16 @@ namespace UnitTest.Infra
             builder.Entity<Category>().Property(x => x.Id)
                 .ValueGeneratedOnAdd()
                 .UseIdentityColumn();
+            
+            builder.Entity<Book>().Property(x => x.Id)
+                .ValueGeneratedOnAdd()
+                .UseIdentityColumn();
+
 
             builder.Entity<Book>().Property(x => x.CreatedAt)
                 .HasDefaultValueSql("now()");
             
-            builder.Entity<Category>().HasData(SeedCategory.StoreSeed());
+            // builder.Entity<Category>().HasData(SeedCategory.StoreSeed());
             base.OnModelCreating(builder);
         }
 

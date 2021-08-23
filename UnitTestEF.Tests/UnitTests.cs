@@ -9,9 +9,9 @@ namespace UnitTestEF.Tests
         {
         }
         
-        [TestMethod]
-        public void GetMessage()
-        {
-        }
+        // [TestMethod]
+        // public void GetMessage()
+        // {
+        // }
     }
 }

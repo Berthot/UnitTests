@@ -9,7 +9,7 @@ namespace UnitTest.Domain.Interface
         Author GetAuthor(string author);
         public Book GetBookByName(string bookName);
         public List<Book> GetBooksByAuthors(string authorName);
-        public void AddNewBook(string title, string url, string categoryName, string author);
+        public Book CreateNewBook(string title, string url, string categoryName, string author);
 
 
     }

@@ -17,7 +17,7 @@ namespace UnitTest.Infra.Repositories
 
         public Category GetCategoryByName(string categoryName)
         {
-            return _context.Categories.FirstOrDefault(x => x.Name.ToLower() == categoryName.ToLower());
+            return _context.Categories.FirstOrDefault(x => x.Name.ToLower() == categoryName);
         }
 
         public Author GetAuthorByName(string authorName)

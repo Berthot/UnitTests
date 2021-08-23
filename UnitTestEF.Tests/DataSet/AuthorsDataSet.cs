@@ -7,7 +7,21 @@ namespace UnitTestEF.Tests.DataSet
     {
         public static List<Author> Data()
         {
-            throw new System.NotImplementedException();
+            return new List<Author>()
+            {
+                new Author()
+                {
+                    // Id = 1,
+                    Books = new List<Book>(),
+                    Name = "robert c martin"
+                },
+                new Author()
+                {
+                    // Id = 2,
+                    Books = new List<Book>(),
+                    Name = "pai joao"
+                }
+            };
         }
     }
 }

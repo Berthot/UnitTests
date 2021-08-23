@@ -12,12 +12,11 @@ namespace UnitTestEF.Tests.DataSet
             {
                 new Book
                 {
-                    // Id = 0,
+                    // Id = 1,
                     Title = "Clean Code",
                     Url = "Lorem ipsum dolor sit amet..",
                     AuthorId = 1,
                     CategoryId = (int) ECategories.Ti,
-                    // CreatedAt = default
                 }
             };
         }

@@ -42,7 +42,10 @@ namespace UnitTest.Domain.Services
             var book = _repo.GetBookByName(bookName);
 
             if (book != default) return book;
-
+            
+            Console.WriteLine("not covered");
+            Console.WriteLine("not covered");
+            Console.WriteLine("not covered");
             Console.WriteLine($"book [{bookName}] not found book");
 
             return null;
@@ -58,9 +61,9 @@ namespace UnitTest.Domain.Services
             return books;
         }
 
-        public void AddNewBook(string title, string url, string categoryName, string authorName)
+        public Book CreateNewBook(string title, string url, string categoryName, string authorName)
         {
-            var category = GetCategory(categoryName);
+            var category = GetCategory(categoryName.ToLower());
 
             if (category == default) throw new Exception("category error");
 
@@ -77,6 +80,24 @@ namespace UnitTest.Domain.Services
             };
 
             _repo.AddBook(book);
+            return book;
+        }
+
+        public void CreateNewAuthor(string authorName)
+        {
+            _repo.AddAuthor(new Author
+            {
+                Books = new List<Book>(),
+                Name = authorName,
+            });
+        }
+
+        public void CreateNewCategory(string proxy)
+        {
+            _repo.AddCategory(new Category()
+            {
+                Name = proxy,
+            });
         }
     }
 }

@@ -16,8 +16,8 @@ namespace UnitTestEF.Tests.Context
         {
             var fakeContext = new UnitTest.Infra.Context(ContextOptions);
             AddAuthor(fakeContext);
-            AddBook(fakeContext);
             AddCategory(fakeContext);
+            // AddBook(fakeContext);
             return fakeContext;
         }
 
@@ -29,13 +29,13 @@ namespace UnitTestEF.Tests.Context
         private static void AddBook(UnitTest.Infra.Context fakeContext)
         {
             fakeContext.Books.AddRange(BooksDataSet.Data());
-            // fakeContext.SaveChanges();
+            fakeContext.SaveChanges();
         }
         
         private static void AddCategory(UnitTest.Infra.Context fakeContext)
         {
             fakeContext.Categories.AddRange(CategoriesDataSet.Data());
-            // fakeContext.SaveChanges();
+            fakeContext.SaveChanges();
         }
     }
 }

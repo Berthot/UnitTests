@@ -7,7 +7,12 @@ namespace UnitTestEF.Tests.DataSet
     {
         public static List<Category> Data()
         {
-            throw new System.NotImplementedException();
+            return new List<Category>()
+            {
+                new Category(name: "TI"),
+                new Category(name: "Adventure Fiction"),
+                new Category(name: "Proxy")
+            };
         }
     }
 }
