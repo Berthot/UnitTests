@@ -29,3 +29,6 @@ Criei o projeto para uma aprensentação interna da empresa em que trabalho, o i
 de utilizar o fakeContext com database inMemory para realizar testes unitarios, e mostrar como funciona a 
 cobertura de codigo, e sua importancia
 ```
+
+# Link para o PDF
+[Link dos slides em .pdf][Unit tests.pdf](https://github.com/Berthot/UnitTests/files/7035232/Unit.tests.pdf)
