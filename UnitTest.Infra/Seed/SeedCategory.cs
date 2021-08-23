@@ -19,6 +19,11 @@ namespace UnitTest.Infra.Seed
                 {
                     Id = 2,
                     Name = "Adventure Fiction"
+                },
+                new Category
+                {
+                    Id = 3,
+                    Name = "Proxy"
                 }
             };
         }

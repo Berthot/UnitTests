@@ -15,24 +15,35 @@ namespace UnitTest.Infra.Repositories
         }
 
 
-        public List<Book> GetBooks()
+        public Category GetCategoryByName(string categoryName)
         {
-            return _context.Books.ToList();
+            return _context.Categories.FirstOrDefault(x => x.Name.ToLower() == categoryName.ToLower());
         }
 
-        public List<Author> GetAuthors()
+        public Author GetAuthorByName(string authorName)
         {
-            return _context.Authors.ToList();
+            return _context.Authors.FirstOrDefault(x => x.Name.ToLower() == authorName.ToLower());
+
         }
 
-        public Book GetBookById(int id)
+        public Book GetBookByName(string bookName)
         {
-            return _context.Books.FirstOrDefault(x => x.Id == id);
+            return _context.Books.FirstOrDefault(x => x.Title.ToLower() == bookName.ToLower());
+
         }
 
-        public Author GetAuthorById(int id)
+        public List<Book> GetBooksByAuthor(string authorName)
         {
-            return _context.Authors.FirstOrDefault(x => x.Id == id);
+            return _context.Books
+                .Where(x => x.Author.Name.ToLower() == authorName.ToLower())
+                .ToList();
+
+        }
+
+        public void AddBook(Book book)
+        {
+            _context.Books.Add(book);
+            _context.SaveChanges();
         }
 
         public void AddAuthor(Author author)
@@ -40,10 +51,10 @@ namespace UnitTest.Infra.Repositories
             _context.Authors.Add(author);
             _context.SaveChanges();
         }
-        
-        public void AddBook(Book book)
+
+        public void AddCategory(Category category)
         {
-            _context.Books.Add(book);
+            _context.Categories.Add(category);
             _context.SaveChanges();
         }
     }

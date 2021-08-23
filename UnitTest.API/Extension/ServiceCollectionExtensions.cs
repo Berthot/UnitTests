@@ -2,6 +2,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using UnitTest.Domain.Interface;
+using UnitTest.Domain.Services;
 using UnitTest.Infra;
 using UnitTest.Infra.Repositories;
 
@@ -14,7 +15,7 @@ namespace UnitTest.API.Extension
         }
         
         public static void AddServices(this IServiceCollection services){
-            // services.AddTransient<ISaveZendeskService, SaveZendeskService>();
+            services.AddTransient<IService, Service>();
         }
 
         public static void AddOtherDependencies(this IServiceCollection services)

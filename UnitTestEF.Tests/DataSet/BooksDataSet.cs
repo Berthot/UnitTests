@@ -14,7 +14,7 @@ namespace UnitTestEF.Tests.DataSet
                 {
                     // Id = 0,
                     Title = "Clean Code",
-                    Content = "Lorem ipsum dolor sit amet..",
+                    Url = "Lorem ipsum dolor sit amet..",
                     AuthorId = 1,
                     CategoryId = (int) ECategories.Ti,
                     // CreatedAt = default

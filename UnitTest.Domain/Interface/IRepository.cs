@@ -5,12 +5,12 @@ namespace UnitTest.Domain.Interface
 {
     public interface IRepository
     {
-        List<Book> GetBooks();
-        List<Author> GetAuthors();
-        Book GetBookById(int id);
-        Author GetAuthorById(int id);
-        void AddAuthor(Author author);
+        Category GetCategoryByName(string categoryName);
+        Author GetAuthorByName(string authorName);
+        Book GetBookByName(string bookName);
+        List<Book> GetBooksByAuthor(string authorName);
         void AddBook(Book book);
-
+        void AddAuthor(Author author);
+        void AddCategory(Category category);
     }
 }
