@@ -19,18 +19,17 @@ namespace UnitTestEF.Tests.Services
             _repo = new Repository(_context);
             _service = new Service(_repo);
         }
-        
+
         [Test]
         [TestCase("robert c martin")]
         [TestCase("pai joao")]
         public void GET_AUTHOR(string authorName)
         {
             _service.CreateNewAuthor(authorName);
-        
-            var author = _service.GetAuthor(authorName);
-            
-            Assert.IsNotNull(author.Id);
 
+            var author = _service.GetAuthor(authorName);
+
+            Assert.IsNotNull(author.Id);
         }
 
         [Test]
@@ -46,21 +45,18 @@ namespace UnitTestEF.Tests.Services
                 categoryName: "proxy",
                 authorName: authorName
             );
-            
-            Assert.IsNotNull(book.Id);
 
+            Assert.IsNotNull(book.Id);
         }
-        
-        
+
+
         [Test]
         [TestCase("Clean Code")]
         public void GET_BOOK_BY_NAME(string bookName)
         {
-
             var getBook = _service.GetBookByName(bookName);
-            
-            Assert.IsNotNull(getBook.Id);
 
+            Assert.IsNotNull(getBook.Id);
         }
     }
 }
