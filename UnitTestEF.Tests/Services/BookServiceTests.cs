@@ -1,13 +1,10 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using UnitTest.Domain.Services;
 using UnitTest.Infra.Repositories;
 using UnitTestEF.Tests.Context;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace UnitTestEF.Tests.Services
 {
-    [TestClass]
     public class BookServiceTests
     {
         private Service _service;
