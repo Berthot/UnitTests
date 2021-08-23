@@ -1,25 +1,31 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using UnitTest.Domain.Services;
 using UnitTest.Infra.Repositories;
 using UnitTestEF.Tests.Context;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace UnitTestEF.Tests.Services
 {
     [TestClass]
     public class BookServiceTests
     {
-        private readonly Service _service;
+        private Service _service;
+        private UnitTest.Infra.Context _context;
+        private Repository _repo;
 
 
-        public BookServiceTests()
+        [SetUp]
+        public void SetUp()
         {
-            var repo = new Repository(FakeContext.GetFakeContext());
-            _service = new Service(repo);
+            _context = FakeContext.GetFakeContext();
+            _repo = new Repository(_context);
+            _service = new Service(_repo);
         }
         
-        [TestMethod]
-        [DataRow("robert c martin")]
-        [DataRow("pai joao")]
+        [Test]
+        [TestCase("robert c martin")]
+        [TestCase("pai joao")]
         public void GET_AUTHOR(string authorName)
         {
             _service.CreateNewAuthor(authorName);
@@ -30,9 +36,9 @@ namespace UnitTestEF.Tests.Services
 
         }
 
-        [TestMethod]
-        [DataRow("robert c martin", "Clean Code")]
-        [DataRow("pai joao", "It magics")]
+        [Test]
+        [TestCase("robert c martin", "Clean Code")]
+        [TestCase("pai joao", "It magics")]
         public void CREATE_NEW_BOOK(string authorName, string title)
         {
             _service.GetAuthor(authorName);
@@ -49,18 +55,10 @@ namespace UnitTestEF.Tests.Services
         }
         
         
-        [TestMethod]
-        [DataRow("Clean Code")]
+        [Test]
+        [TestCase("Clean Code")]
         public void GET_BOOK_BY_NAME(string bookName)
         {
-            _service.GetAuthor("robert c martin");
-
-            var book = _service.CreateNewBook(
-                title: bookName,
-                url: "www.url_aleatoria.com",
-                categoryName: "proxy",
-                authorName: "robert c martin"
-            );
 
             var getBook = _service.GetBookByName(bookName);
             
