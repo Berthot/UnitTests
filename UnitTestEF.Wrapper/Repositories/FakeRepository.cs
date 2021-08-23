@@ -6,7 +6,7 @@ namespace UnitTestEF.Wrapper.Repositories
 {
     public class FakeRepository : IRepository
     {
-        public List<Message> GetMessages()
+        public List<Book> GetBooks()
         {
             throw new System.NotImplementedException();
         }
@@ -16,7 +16,7 @@ namespace UnitTestEF.Wrapper.Repositories
             throw new System.NotImplementedException();
         }
 
-        public Message GetMessageById(int id)
+        public Book GetBookById(int id)
         {
             throw new System.NotImplementedException();
         }
@@ -31,7 +31,7 @@ namespace UnitTestEF.Wrapper.Repositories
             throw new System.NotImplementedException();
         }
 
-        public void AddMessage(Message message)
+        public void AddBook(Book book)
         {
             throw new System.NotImplementedException();
         }

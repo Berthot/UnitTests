@@ -1,35 +1,45 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using UnitTest.Domain.Entity;
 
 namespace UnitTest.Infra
 {
-    public class Context: DbContext
+    public class Context : DbContext
     {
-        public virtual DbSet<Message> Messages { get; set; }
+        public Context()
+        {
+        }
+
+        public Context(DbContextOptions<Context> builderOptions) : base(builderOptions)
+        {
+        }
+
+        public virtual DbSet<Book> Books { get; set; }
 
         public virtual DbSet<Author> Authors { get; set; }
+        
+        public virtual DbSet<Category> Categories { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-
             builder.Entity<Author>().Property(x => x.Id)
                 .ValueGeneratedOnAdd()
-                .UseIdentityColumn(); 
+                .UseIdentityColumn();
             
-            builder.Entity<Message>().Property(x => x.Id)
+            builder.Entity<Category>().Property(x => x.Id)
                 .ValueGeneratedOnAdd()
-                .UseIdentityColumn(); 
-            
+                .UseIdentityColumn();
+
+            builder.Entity<Book>().Property(x => x.CreatedAt)
+                .HasDefaultValueSql("now()");
             
             base.OnModelCreating(builder);
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Username=postgres;Password=idkfa123;Database=testing;");
-            base.OnConfiguring(optionsBuilder);
-        }
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Username=kazen;Password=kazen@2021;Database=test;");
+        //     base.OnConfiguring(optionsBuilder);
+        // }
     }
 }

@@ -5,12 +5,12 @@ namespace UnitTest.Domain.Interface
 {
     public interface IRepository
     {
-        List<Message> GetMessages();
+        List<Book> GetBooks();
         List<Author> GetAuthors();
-        Message GetMessageById(int id);
+        Book GetBookById(int id);
         Author GetAuthorById(int id);
         void AddAuthor(Author author);
-        void AddMessage(Message message);
+        void AddBook(Book book);
 
     }
 }

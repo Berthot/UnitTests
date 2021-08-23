@@ -15,9 +15,9 @@ namespace UnitTest.Infra.Repositories
         }
 
 
-        public List<Message> GetMessages()
+        public List<Book> GetBooks()
         {
-            return _context.Messages.ToList();
+            return _context.Books.ToList();
         }
 
         public List<Author> GetAuthors()
@@ -25,9 +25,9 @@ namespace UnitTest.Infra.Repositories
             return _context.Authors.ToList();
         }
 
-        public Message GetMessageById(int id)
+        public Book GetBookById(int id)
         {
-            return _context.Messages.FirstOrDefault(x => x.Id == id);
+            return _context.Books.FirstOrDefault(x => x.Id == id);
         }
 
         public Author GetAuthorById(int id)
@@ -41,9 +41,9 @@ namespace UnitTest.Infra.Repositories
             _context.SaveChanges();
         }
         
-        public void AddMessage(Message message)
+        public void AddBook(Book book)
         {
-            _context.Messages.Add(message);
+            _context.Books.Add(book);
             _context.SaveChanges();
         }
     }
