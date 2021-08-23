@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using UnitTest.Domain.Entity;
+using UnitTest.Infra.Seed;
 
 namespace UnitTest.Infra
 {
@@ -33,6 +34,7 @@ namespace UnitTest.Infra
             builder.Entity<Book>().Property(x => x.CreatedAt)
                 .HasDefaultValueSql("now()");
             
+            builder.Entity<Category>().HasData(SeedCategory.StoreSeed());
             base.OnModelCreating(builder);
         }
 
@@ -42,4 +44,5 @@ namespace UnitTest.Infra
         //     base.OnConfiguring(optionsBuilder);
         // }
     }
+
 }

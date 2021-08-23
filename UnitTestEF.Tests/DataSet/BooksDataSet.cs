@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnitTest.Domain;
 using UnitTest.Domain.Entity;
 
 namespace UnitTestEF.Tests.DataSet
@@ -7,7 +8,18 @@ namespace UnitTestEF.Tests.DataSet
     {
         public static List<Book> Data()
         {
-            throw new System.NotImplementedException();
+            return new List<Book>()
+            {
+                new Book
+                {
+                    // Id = 0,
+                    Title = "Clean Code",
+                    Content = "Lorem ipsum dolor sit amet..",
+                    AuthorId = 1,
+                    CategoryId = (int) ECategories.Ti,
+                    // CreatedAt = default
+                }
+            };
         }
     }
 }

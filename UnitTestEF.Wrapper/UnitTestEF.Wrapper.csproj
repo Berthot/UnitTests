@@ -10,4 +10,8 @@
       <ProjectReference Include="..\UnitTest.Infra\UnitTest.Infra.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="MSTest.TestFramework" Version="2.2.3" />
+    </ItemGroup>
+
 </Project>
