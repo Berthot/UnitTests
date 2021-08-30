@@ -12,10 +12,12 @@ namespace UnitTestEF.Tests.DataSet
             {
                 new Book
                 {
-                    // Id = 1,
-                    Title = "Clean Code",
-                    Url = "Lorem ipsum dolor sit amet..",
-                    AuthorId = 1,
+                    Title = "Quick Answers to Big Questions",
+                    Url = "https://ler.amazon.com.br/kp/embed?asin=B07JVPCCWS&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_0V7D4V26CWMXJ1604R3J",
+                    Author = new Author
+                    {
+                        Name = "Stephen Hawking",
+                    },
                     CategoryId = (int) ECategories.Ti,
                 }
             };

@@ -17,7 +17,7 @@ namespace UnitTestEF.Tests.Context
             var fakeContext = new UnitTest.Infra.Context(ContextOptions);
             AddAuthor(fakeContext);
             AddCategory(fakeContext);
-            // AddBook(fakeContext);
+            AddBook(fakeContext);
             return fakeContext;
         }
 

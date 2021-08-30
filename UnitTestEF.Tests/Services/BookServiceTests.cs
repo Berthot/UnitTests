@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using UnitTest.Domain.Services;
 using UnitTest.Infra.Repositories;
@@ -19,6 +20,19 @@ namespace UnitTestEF.Tests.Services
             _repo = new Repository(_context);
             _service = new Service(_repo);
         }
+        
+        [TearDown]
+        public void TearDown()
+        {
+            _context.Database.EnsureDeleted();
+        }
+
+        #region AAA
+            // Arrange
+            // Act
+            // Asset
+        #endregion
+
 
         [Test]
         [TestCase("robert c martin")]
@@ -51,12 +65,22 @@ namespace UnitTestEF.Tests.Services
 
 
         [Test]
-        [TestCase("Clean Code")]
+        [TestCase("Quick Answers to Big Questions")]
+        // [TestCase("Clean Code")]
         public void GET_BOOK_BY_NAME(string bookName)
         {
             var getBook = _service.GetBookByName(bookName);
 
             Assert.IsNotNull(getBook.Id);
+        }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase("")]
+        public void GET_CATEGORY_EXCEPTION(string categoryName)
+        {
+            Assert.Throws<Exception>(() => _service.GetCategory(categoryName));
+
         }
     }
 }
