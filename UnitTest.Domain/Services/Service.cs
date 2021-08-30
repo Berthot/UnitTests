@@ -46,9 +46,7 @@ namespace UnitTest.Domain.Services
             Console.WriteLine("not covered");
             Console.WriteLine("not covered");
             Console.WriteLine("not covered");
-            Console.WriteLine($"book [{bookName}] not found book");
-
-            return null;
+            throw new Exception($"book [{bookName}] not found book");
         }
 
         public List<Book> GetBooksByAuthors(string authorName)
